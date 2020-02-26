@@ -1,0 +1,17 @@
+.profileHeader {
+  padding-top: 125px;
+  background-color: #734;
+  background-image: url('/images/asfalt-dark.png');
+  
+}
+
+.profilePic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profileUsername {
+  text-align: center;
+  margin-top: 5px;
+}

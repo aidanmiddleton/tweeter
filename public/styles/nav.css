@@ -1,0 +1,23 @@
+.topNav {
+  background-color: #660823;
+  height: 120px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.headerLogo {
+  padding: 45px;
+  display: inline-block;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.newTweet {
+  padding: 45px;
+  float: right;
+  display: inline-block;
+}
