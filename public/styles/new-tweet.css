@@ -1,6 +1,7 @@
 .tweetEntryBox {
   width: 90%;
   border: none;
+  outline: none;
   border-bottom: 3px solid black;
   color: rgb(248, 130, 34);
   background-color: transparent;
