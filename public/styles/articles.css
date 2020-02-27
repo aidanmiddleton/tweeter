@@ -10,7 +10,7 @@ article {
 
 article.tweet:hover {
   border: solid;
-  box-shadow: 5px 5px black;
+  box-shadow: 7px 7px black;
   opacity: 1;
 }
 
@@ -37,7 +37,9 @@ article footer {
 }
 
 article:hover p.usershandle {
+  /* transition: display 1s ease-in; */
   display: inline-block;
+  opacity: 65%;
 }
 
 .usershandle {
