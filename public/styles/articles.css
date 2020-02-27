@@ -6,6 +6,8 @@ article {
   padding-bottom: 0.75em;
   padding-right: 1em;
   padding-left: 1em;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 article.tweet:hover {
