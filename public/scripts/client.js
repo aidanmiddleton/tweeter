@@ -58,4 +58,14 @@ $(document).ready(() => {
 
   
   renderTweets(data)
+
+  $( ".submission-form" ).submit(function( event ) {
+    let $tweet = $(this).serialize();
+    $.post('/tweets', $tweet, function() {
+      console.log('the post worked')
+    })
+    event.preventDefault();
+  });
+
+
 });
