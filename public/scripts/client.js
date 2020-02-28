@@ -60,4 +60,10 @@ $(document).ready(() => {
   });
 
 
+  $('.arrow').click(function() {
+    $('.new-tweet')
+    .slideToggle(500)
+    .focus();
+  })
+
 });

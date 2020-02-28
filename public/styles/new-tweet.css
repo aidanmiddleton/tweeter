@@ -1,3 +1,7 @@
+.new-tweet {
+  display:none
+}
+
 .tweetEntryBox {
   width: 90%;
   border: none;

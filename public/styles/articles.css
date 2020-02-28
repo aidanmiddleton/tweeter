@@ -59,3 +59,7 @@ article:hover p.usershandle {
   top: -8px;
   left: 65px;
 }
+
+.tweetContents {
+  word-break: break-all;
+}
