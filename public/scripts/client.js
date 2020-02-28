@@ -30,34 +30,40 @@ $(document).ready(() => {
       }
     ]
     
-    const renderTweets = function(tweets) {
-      for (let tweet of tweets) {
-        let $currentTweet = createTweetElement(tweet);
-        console.log(tweet)
-        $('.tweets-container').prepend($currentTweet);
-      }
-    };
-    
-    const createTweetElement = function(tweet) {
-      const $tweet = $('<article>').addClass('tweet');
-      const $header = $('<header>')
-      const $tweetHeader = $('<div>').addClass('tweetHeader');
-      const $avatar = $('<img>').addClass('tweetPic').attr('src', tweet.user.avatars);
-      const $userName = $('<p>').addClass('usersName').text(tweet.user.name);
-      const $usersHandle = $('<p>').addClass('usershandle').text(tweet.user.handle);
-      const $tweetContents = $('<p>').addClass('tweetContents').text(tweet.content.text);
-      const $tweetFooter = $('<footer>').addClass('tweetFooter').text(`posted ${tweet.created_at}`);
-      
-      $tweetHeader.append($avatar, $userName, $usersHandle);
-      $header.append($tweetHeader);
-      $tweet.append($header, $tweetContents, $tweetFooter);
-      console.dir($tweet[0].innerHTML);
-      // $tweet.append($header, )
-      return $tweet;
+  const renderTweets = function(tweets) {
+    for (let tweet of tweets) {
+      let $currentTweet = createTweetElement(tweet);
+      console.log(tweet)
+      $('.tweets-container').prepend($currentTweet);
     }
-
+  };
   
-  renderTweets(data)
+  const createTweetElement = function(tweet) {
+    const $tweet = $('<article>').addClass('tweet');
+    const $header = $('<header>')
+    const $tweetHeader = $('<div>').addClass('tweetHeader');
+    const $avatar = $('<img>').addClass('tweetPic').attr('src', tweet.user.avatars);
+    const $userName = $('<p>').addClass('usersName').text(tweet.user.name);
+    const $usersHandle = $('<p>').addClass('usershandle').text(tweet.user.handle);
+    const $tweetContents = $('<p>').addClass('tweetContents').text(tweet.content.text);
+    const $tweetFooter = $('<footer>').addClass('tweetFooter').text(`posted ${tweet.created_at}`);
+    
+    $tweetHeader.append($avatar, $userName, $usersHandle);
+    $header.append($tweetHeader);
+    $tweet.append($header, $tweetContents, $tweetFooter);
+    console.dir($tweet[0].innerHTML);
+    // $tweet.append($header, )
+    return $tweet;
+  }
+
+  const loadTweets = function() {
+    $.get('/tweets', function(result) {
+      console.log('get request was ok')
+      renderTweets(result);
+    })
+  }
+
+  loadTweets()
 
   $( ".submission-form" ).submit(function( event ) {
     let $tweet = $(this).serialize();
