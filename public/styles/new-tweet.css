@@ -3,7 +3,8 @@
 }
 
 .tweetEntryBox {
-  width: 90%;
+  resize: none;
+  width: 100%;
   border: none;
   outline: none;
   border-bottom: 3px solid black;
@@ -26,3 +27,18 @@
   
 }
 
+div#error {
+  font-weight: 700;
+  background-color: #734;
+  background-image: url('/images/asfalt-dark.png');
+  margin-top: 1.5em;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 5px;
+  color: rgb(248, 130, 34);
+  display: none;
+  border: solid  red;
+  text-align: center;
+
+}

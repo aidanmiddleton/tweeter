@@ -45,10 +45,15 @@ $(document).ready(() => {
     event.preventDefault();
     const characterLength = $('.tweetEntryBox').val().length
     if (characterLength > 140) {
-      alert('You are over the character limit');
-    } 
-    if (characterLength === 0) {
-      alert("You didn't enter anything in!");
+      $('#error').slideDown('slow')
+      .text('🛑 Chatterbox over here! keep it under 140 characters pls. 🛑')
+      .delay(3000)
+      .slideUp('slow');
+    } else if (characterLength === 0) {
+      $('#error').slideDown('slow')
+      .text("🛑 Sorry dude, but you can't post a blank tweet! 🛑")
+      .delay(3000)
+      .slideUp('slow')
     } else {
     let $tweet = $(this).serialize();
     $.post('/tweets', $tweet, function() {
@@ -58,6 +63,7 @@ $(document).ready(() => {
     })
    }
   });
+
 
 
   $('.arrow').click(function() {
