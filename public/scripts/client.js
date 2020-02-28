@@ -4,36 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(() => {
-
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-        "content": {
-          "text": "Je pense , donc je suis"
-        },
-        "created_at": 1461113959088
-      }
-    ]
     
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       let $currentTweet = createTweetElement(tweet);
-      console.log(tweet)
       $('.tweets-container').prepend($currentTweet);
     }
   };
@@ -51,26 +25,38 @@ $(document).ready(() => {
     $tweetHeader.append($avatar, $userName, $usersHandle);
     $header.append($tweetHeader);
     $tweet.append($header, $tweetContents, $tweetFooter);
-    console.dir($tweet[0].innerHTML);
-    // $tweet.append($header, )
     return $tweet;
   }
 
   const loadTweets = function() {
     $.get('/tweets', function(result) {
-      console.log('get request was ok')
       renderTweets(result);
     })
   }
 
   loadTweets()
 
+  const clearForm = function() {
+    $( ".submission-form .tweetEntryBox" ).val(null);
+    $( ".submission-form .counter").text(140);
+  }
+
   $( ".submission-form" ).submit(function( event ) {
+    event.preventDefault();
+    const characterLength = $('.tweetEntryBox').val().length
+    if (characterLength > 140) {
+      alert('You are over the character limit');
+    } 
+    if (characterLength === 0) {
+      alert("You didn't enter anything in!");
+    } else {
     let $tweet = $(this).serialize();
     $.post('/tweets', $tweet, function() {
       console.log('the post worked')
+      loadTweets();
+      clearForm();
     })
-    event.preventDefault();
+   }
   });
 
 

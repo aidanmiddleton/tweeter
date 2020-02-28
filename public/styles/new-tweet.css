@@ -8,6 +8,8 @@
 }
 
 .tweetButton {
+  outline: none;
+  border-radius: 7px;
   border: none;
   background-color: rgb(248, 130, 34);
 }
