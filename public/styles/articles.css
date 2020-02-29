@@ -27,7 +27,7 @@ article footer {
   flex-direction: row;
   border-top: solid;
   padding-top: 10px;
-
+  justify-content: space-between;
 }
 
 .tweetPic {
@@ -42,6 +42,13 @@ article footer {
 article:hover p.usershandle {
   /* transition: display 1s ease-in; */
   display: inline-block;
+  opacity: 65%;
+}
+
+article:hover div.icons {
+  /* transition: display 1s ease-in; */
+  justify-content: space-evenly;
+  display: flex;
   opacity: 65%;
 }
 
@@ -61,5 +68,13 @@ article:hover p.usershandle {
 }
 
 .tweetContents {
-  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.icons {
+  display: none;
+}
+
+i {
+  padding: 10px;
 }

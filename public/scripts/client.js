@@ -20,10 +20,15 @@ $(document).ready(() => {
     const $userName = $('<p>').addClass('usersName').text(tweet.user.name);
     const $usersHandle = $('<p>').addClass('usershandle').text(tweet.user.handle);
     const $tweetContents = $('<p>').addClass('tweetContents').text(tweet.content.text);
-    const $tweetFooter = $('<footer>').addClass('tweetFooter').text(`posted ${tweet.created_at}`);
-    
+    const $tweetFooter = $('<footer>').addClass('tweetFooter').text(`posted ${moment(tweet.created_at).fromNow()}`);
+    const $iconsDiv = $('<div>').addClass('icons')
+    const $retweet = $('<i>').addClass("fas fa-retweet");
+    const $heart = $('<i>').addClass("fas fa-heart");
+    const $flag = $('<i>').addClass("fas fa-flag");
     $tweetHeader.append($avatar, $userName, $usersHandle);
+    $iconsDiv.append($retweet, $flag, $heart);
     $header.append($tweetHeader);
+    $tweetFooter.append($iconsDiv);
     $tweet.append($header, $tweetContents, $tweetFooter);
     return $tweet;
   }
