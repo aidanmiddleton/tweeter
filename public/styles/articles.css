@@ -1,3 +1,5 @@
+/* css specific to the tweet articles themselves, and the boxes that contain them */
+
 article {
   border-radius: 7px;
   background-color: #734;
@@ -40,16 +42,15 @@ article footer {
 }
 
 article:hover p.usershandle {
-  /* transition: display 1s ease-in; */
   display: inline-block;
   opacity: 65%;
 }
 
 article:hover div.icons {
-  /* transition: display 1s ease-in; */
   justify-content: space-evenly;
   display: flex;
   opacity: 65%;
+  font-size: 17px;
 }
 
 .usershandle {
@@ -58,8 +59,6 @@ article:hover div.icons {
   right: 10px;
   top: -8px;
 }
-
-
 
 .usersName {
   position: absolute;
