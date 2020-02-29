@@ -18,9 +18,11 @@ This was an educational project, focused mainly on front end. Utilizing CSS, JS,
 - Chance
 - Body-Parser
 
+## Screenshots
 
+- Tablet view with tweet box visible
 !["Shows tablet view with the compose tweet box visible"](https://github.com/aidanmiddleton/tweeter/blob/master/docs/tablet-view-compose.png?raw=true)
-
+- Tablet view with tweet box hidden
 !["Shows the tablet view with the tweet box hidden"](https://github.com/aidanmiddleton/tweeter/blob/master/docs/tablet-view-hiddencompose.png?raw=true)
-
+- widescreen view
 !["Shows widescreen responsive view of the page"](https://github.com/aidanmiddleton/tweeter/blob/master/docs/widescreen-view.png?raw=true)
