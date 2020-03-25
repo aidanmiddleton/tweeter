@@ -37,6 +37,7 @@ $(document).ready(() => {
 //retrieves tweets from server and calls the renderTweets function
 
   const loadTweets = function() {
+    $('.tweets-container').empty();
     $.get('/tweets', function(result) {
       renderTweets(result);
     })
@@ -83,4 +84,26 @@ $(document).ready(() => {
     $('.tweetEntryBox').focus()
   })
 
+  topButton = document.getElementById("top-button");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      topButton.style.display = "block";
+    } else {
+      topButton.style.display = "none";
+    }
+  }
+
+  $('#top-button').click(
+
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+  )
+
+
 });
+
+
